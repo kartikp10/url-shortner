@@ -1,3 +1,12 @@
+@font-face {
+  font-family: logoFont;
+  src: url(Attemptyon-qvYx.ttf);
+}
+
+* {
+  background-color: black;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -16,4 +25,10 @@ a {
 
 .url-form {
   width: 100%;
+}
+
+.logo {
+  font-family: logoFont;
+  color: rgb(255, 207, 75);
+  font-size: 6rem;
 }
