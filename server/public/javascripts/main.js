@@ -110,7 +110,7 @@ async function submit(event) {
   };
 
   try {
-    const res = await fetch('http://localhost:3000/url', requestOptions);
+    const res = await fetch('/url', requestOptions);
     const data = await res.json();
     return data;
   } catch (error) {
