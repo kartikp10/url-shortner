@@ -9,3 +9,7 @@ This is a project to create a url shortner ✂️
 - [x] GET URL object with an id.
 - [x] POST to create a new short url.
 - [x] Push application to heroku.
+- [ ] Make error gif responsive.
+- [ ] Add OpenAPI docs.
+- [ ] Limit number of requests from client.
+- [ ] Render validation errors on page.
