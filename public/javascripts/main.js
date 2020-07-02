@@ -45,7 +45,6 @@ function notFound() {
     'click',
     () => {
       submit(event).then((data) => {
-        console.log(data.error);
         let display = {
           template: '',
           data: '',
