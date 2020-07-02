@@ -16,15 +16,21 @@ let schema = yup.object({
   url: yup.string().trim().url().required(),
 });
 
-// GET url with alias or id
-router.get('/url/:alias', async (req, res, next) => {
+// GET url with alias or id and resirect client.
+router.get('/:alias', async (req, res, next) => {
   const alias = req.params.alias;
   // const url = urls.find((u) => u.id === parseInt(id));
-  const url = await urls.findOne({ alias: alias });
-  if (url) {
-    return res.json({ trimmedUrl: process.env.BASE_URI + alias });
-  } else {
-    return res.status(404).json({ error: 'trimmed url not found 🥞' });
+  try {
+    const url = await urls.findOne({ alias: alias });
+    if (url) {
+      return res.redirect(url.url);
+      // return res.json({ trimmedUrl: process.env.BASE_URI + alias });
+    } else {
+      return res.status(404).redirect('/?error=not-found');
+    }
+  } catch (err) {
+    console.error(err);
+    return res.status(404).redirect('/?error=not-found');
   }
 });
 
@@ -33,7 +39,6 @@ router.post('/url', async (req, res, next) => {
   let { alias, url } = req.body;
   try {
     if (!alias) {
-      console.log(alias);
       alias = nanoid(5).toLocaleLowerCase();
     }
     await schema.validate({ alias, url });
@@ -42,10 +47,15 @@ router.post('/url', async (req, res, next) => {
       url,
     };
     const created = await urls.insert(newUrl);
-    res.json(newUrl);
+    if (created) {
+      res.json({ trimmedUrl: process.env.BASE_URI + alias });
+    }
   } catch (err) {
-    console.error(err);
-    next(err);
+    if (err.message.startsWith('E11000')) {
+      res.json({ error: 'Alias in use 💩' });
+    } else {
+      next(err);
+    }
   }
 });
 

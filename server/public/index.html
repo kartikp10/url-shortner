@@ -3,29 +3,29 @@
 <head>
   <title>✄ URL Shortner</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="./stylesheets/uikit.min.css">
-  <script src="./javascripts/uikit.min.js"></script>
-  <script src="./javascripts/uikit-icons.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-  <main class="main">
-    <h1 class="logo">trimr.cc</h1>
 
-    <form class="url-form">
+  <div class="container" id="main">
 
-      <div class="uk-margin">
-        <input class="uk-input form-ip" type="text" placeholder="URL" name="url">
-      </div>
+    <div class="url-form col-sm-12 text-center" id="response">
 
-      <div class="uk-margin">
-        <input class="uk-input form-ip" type="text" placeholder="Alias" name="alias">
-      </div>
-
-      <button type="submit" class="uk-button uk-button-primary uk-width-1-1">Get Short URL 🤩</button>
-    </form>
-
-  </main>
+    </div>
+  </div>
+  <script src="./javascripts/main.js"></script>
 </body>
 
 </html>

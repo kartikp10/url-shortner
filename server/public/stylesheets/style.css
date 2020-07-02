@@ -1,34 +1,72 @@
 @font-face {
   font-family: logoFont;
-  src: url(Attemptyon-qvYx.ttf);
+  src: url(./Pixelmania.ttf);
 }
 
 * {
-  background-color: black;
+  /* filter: invert(); */
+  font-family: monospace;
+  font-weight: bold;
 }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  text-align: center;
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
 }
 
-a {
-  color: #00B7FF;
-}
-
-.main {
-  padding: 0;
-  margin: 0 auto;
-  width: 50%;
-}
 
 .url-form {
-  width: 100%;
+  width: 340px;
+  margin: 50px auto;
+  font-size: 15px;
+}
+
+.url-form form {
+  margin-top: 20%;
+  margin-bottom: 15px;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.url-form h2 {
+  margin: 0 0 15px;
+}
+
+.form-control,
+.btn {
+  min-height: 38px;
+  border-radius: 0% !important;
+  border: #33AEFF;
+}
+
+.btn {
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
   font-family: logoFont;
-  color: rgb(255, 207, 75);
-  font-size: 6rem;
+  color: rgb(42, 42, 42);
+  margin-top: 15px;
+  margin-bottom: 45px;
+  font-weight: lighter;
+  /* font-size: 4rem; */
+}
+
+.error-message {
+  font-size: larger;
+}
+
+.alert,
+.alert-danger {
+  border-radius: 0% !important;
+  box-shadow: 0px 3px 3px rgba(255, 0, 0, 0.342);
+  font-size: 17px;
+}
+
+#trimmedUrl,
+#copy {
+  font-size: 17px;
 }
