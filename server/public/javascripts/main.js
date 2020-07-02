@@ -1,5 +1,5 @@
-let button = document.getElementById('submit');
-let responsediv = document.getElementById('response');
+let button;
+let responsediv;
 
 function notFound() {
   const location = window.location.href;
@@ -39,41 +39,42 @@ function notFound() {
       </div>
     </div>`;
   }
+  button = document.getElementById('submit');
+  responsediv = document.getElementById('response');
+  button.addEventListener(
+    'click',
+    () => {
+      submit(event).then((data) => {
+        console.log(data.error);
+        let display = {
+          template: '',
+          data: '',
+        };
+        if (data.trimmedUrl) {
+          // display trimmed url.
+          display.data = data.trimmedUrl;
+          display.template = `
+          <div class="input-group mb-3">
+          <input class="form-control" type="text" value="${display.data}" id="trimmedUrl" readonly>
+              <div class="input-group-append">
+                  <span class="btn btn-warning" onClick="copyUrl()" id="Copy">Copy!</span>
+              </div>
+          </div>`;
+        } else if (data.error) {
+          // display error.
+          display.data = data.error;
+          display.template = `
+          <div class="alert alert-danger" role="alert">${display.data}</div>
+          `;
+        }
+        responsediv.innerHTML = display.template;
+      });
+    },
+    false
+  );
 }
 
 window.onload = notFound;
-
-button.addEventListener(
-  'click',
-  () => {
-    submit(event).then((data) => {
-      console.log(data.error);
-      let display = {
-        template: '',
-        data: '',
-      };
-      if (data.trimmedUrl) {
-        // display trimmed url.
-        display.data = data.trimmedUrl;
-        display.template = `
-        <div class="input-group mb-3">
-        <input class="form-control" type="text" value="${display.data}" id="trimmedUrl" readonly>
-            <div class="input-group-append">
-                <span class="btn btn-warning" onClick="copyUrl()" id="Copy">Copy!</span>
-            </div>
-        </div>`;
-      } else if (data.error) {
-        // display error.
-        display.data = data.error;
-        display.template = `
-        <div class="alert alert-danger" role="alert">${display.data}</div>
-        `;
-      }
-      responsediv.innerHTML = display.template;
-    });
-  },
-  false
-);
 
 function copyUrl() {
   let copyText = document.getElementById('trimmedUrl');
