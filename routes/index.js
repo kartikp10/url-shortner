@@ -7,6 +7,9 @@ const app = require('../app');
 const { urls, db } = require('../db');
 const nodemon = require('nodemon');
 
+const baseUri =
+  process.env.NODE_ENV === 'production' ? 'trimr.cc/' : 'localhost:3000/';
+
 let schema = yup.object({
   alias: yup
     .string()
@@ -48,7 +51,7 @@ router.post('/url', async (req, res, next) => {
     };
     const created = await urls.insert(newUrl);
     if (created) {
-      res.json({ trimmedUrl: process.env.BASE_URI + alias });
+      res.json({ trimmedUrl: baseUri + alias });
     }
   } catch (err) {
     if (err.message.startsWith('E11000')) {
