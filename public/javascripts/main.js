@@ -35,8 +35,13 @@ function notFound() {
             <button type="submit" class="btn btn-danger btn-block" id="submit">Get Short URL
               ✨</button>
           </div>
+          <hr>
+          <div class="signature">
+            <p class="sign-text">Made with ♥ by <strong><a href="http://trimr.cc/linkedin">Kartik</strong></p>
+          </div>
         </form>
       </div>
+
     </div>`;
   }
   button = document.getElementById('submit');

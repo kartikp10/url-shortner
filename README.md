@@ -13,3 +13,4 @@ This is a project to create a url shortner ✂️
 - [ ] Add OpenAPI docs.
 - [ ] Limit number of requests from client.
 - [ ] Render validation errors on page.
+- [ ] Implement cacheing.
