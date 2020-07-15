@@ -95,8 +95,14 @@ function copyUrl() {
 async function submit(event) {
   event.preventDefault();
 
-  const urlValue = document.getElementById('url').value;
+  let urlValue = document.getElementById('url').value;
   const aliasValue = document.getElementById('alias').value;
+
+  if (urlValue) {
+    if (!(urlValue.startsWith('https://') || urlValue.startsWith('http://'))) {
+      urlValue = 'https://' + urlValue;
+    }
+  }
 
   var myHeaders = {
     'Content-Type': 'application/json',
