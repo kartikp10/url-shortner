@@ -2,6 +2,14 @@
 
 This is a project to create a url shortner ✂️
 
+### Live URL: [trimr.cc](http://trimr.cc)
+
+### Screenshot:
+
+![screenshot](trimir.png)
+
+### TODO
+
 - [x] Setup Express application.
 - [x] Setup form.
 - [x] Connect mongo database.
