@@ -1,10 +1,7 @@
 # URL Shortner
+A free URL shortner ✂️ for everyone! 
 
-This is a project to create a url shortner ✂️
-
-### Live URL: [trimr.cc](http://trimr.cc)
-
-### Screenshot:
+### Live at [trimr.cc](http://trimr.cc)
 
 ![screenshot](trimir.png)
 
