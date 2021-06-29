@@ -1,8 +1,6 @@
 # URL Shortner
 A free URL shortner ✂️ for everyone! 
 
-### Live at [trimr.cc](http://trimr.cc)
-
 ![screenshot](trimir.png)
 
 ### TODO
